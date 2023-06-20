@@ -19,6 +19,8 @@ public protocol BetterSegmentedControlSegment {
     
     /// The view to be shown for the active or selected state.
     var selectedView: UIView { get }
+
+    var isEnabled: Bool { get }
 }
 
 #endif

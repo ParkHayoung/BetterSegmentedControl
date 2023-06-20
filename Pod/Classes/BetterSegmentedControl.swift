@@ -282,7 +282,7 @@ import UIKit
     ///   `false`. This takes precedence over `alwaysAnnouncesValue`.
     public func setIndex(_ index: Int, animated: Bool = true, shouldSendValueChangedEvent: Bool = false) {
         guard segments.indices.contains(index) || index == Self.noSegment else { return }
-        
+        guard segments[index].isEnabled else { return }
         let previousIndex = self.index
         self.index = index
         

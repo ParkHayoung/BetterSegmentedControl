@@ -25,16 +25,20 @@ open class IconSegment: BetterSegmentedControlSegment {
     
     public var selectedIconTintColor: UIColor
     public var selectedBackgroundColor: UIColor
+
+    public var isEnabled: Bool
     
     // MARK: Lifecycle
     public init(icon: UIImage,
                 iconSize: CGSize,
+                isEnabled: Bool = true,
                 normalBackgroundColor: UIColor? = nil,
                 normalIconTintColor: UIColor,
                 selectedBackgroundColor: UIColor? = nil,
                 selectedIconTintColor: UIColor) {
         self.icon = icon.withRenderingMode(.alwaysTemplate)
         self.iconSize = iconSize
+        self.isEnabled = isEnabled
         self.normalBackgroundColor = normalBackgroundColor ?? DefaultValues.normalBackgroundColor
         self.normalIconTintColor = normalIconTintColor
         self.selectedBackgroundColor = selectedBackgroundColor ?? DefaultValues.selectedBackgroundColor
