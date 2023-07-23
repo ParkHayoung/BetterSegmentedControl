@@ -280,9 +280,9 @@ import UIKit
     ///   - animated: Whether the change should be animated or not. Defaults to `true`.
     ///   - shouldSendValueChangedEvent: Whether the index change should trigger a `.valueChanged` event or not. Defaults to
     ///   `false`. This takes precedence over `alwaysAnnouncesValue`.
-    public func setIndex(_ index: Int, animated: Bool = true, shouldSendValueChangedEvent: Bool = false) {
+    public func setIndex(_ index: Int, animated: Bool = true, forceSetIndex: Bool = false, shouldSendValueChangedEvent: Bool = false) {
         guard segments.indices.contains(index) || index == Self.noSegment else { return }
-        guard segments[index].isEnabled else { return }
+        guard segments[index].isEnabled || forceSetIndex else { return }
         let previousIndex = self.index
         self.index = index
         
